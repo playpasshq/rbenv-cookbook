@@ -85,7 +85,7 @@ class Chef
           version_option = (version.nil? || version.empty?) ? "" : " -v \"#{version}\""
 
           shell_out!(
-            "#{gem_binary_path} install #{name} -q --no-rdoc --no-ri #{version_option} #{src}#{opts}",
+            "#{gem_binary_path} install #{name} -q --no-document #{version_option} #{src}#{opts}",
             :user => node[:rbenv][:user],
             :group => node[:rbenv][:group],
             :env => {
